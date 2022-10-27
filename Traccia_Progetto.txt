@@ -1,0 +1,22 @@
+L'archivio del Servizio Sanitario Nazionale è un'enorme base di dati contenente per ogni utente lo storico della
+propria storia Sanitaria.
+ln questa sede, viene chiesto al team di sviluppo di sviluppare un gestionale che permetta di registrare degli utenti
+(malati) di malattie immaginarie (illness list). Ogni malato, previa una registrazione nella quale dovrà fornire:
+• Nome
+• Cognome
+• Sesso
+• Data di nascita
+• Luogo di Nascita
+• Password 
+Potrà accedere al proprio profilo fornendo il codice fiscale (calcolato in fase di registrazione) e attraverso la propria password.
+Accedendo al proprio profilo l'utente potrà svolgere le seguenti azioni:
+• cambiare la propria password
+• eliminare il proprio profilo
+• aggiungere e/o eliminare una patologia (immaginarie al paziente)
+Relativamente alle patologie ogni utente potrà:
+• visualizzare la lista completa di tutte le patologie, comuni a tutti gli utenti. (si raccomanda l'impiego di nomi di patologie immaginarie)
+• visualizzare solo le proprie patologie
+• creare una patologia nuova che potrà essere aggiunta alla lista delle proprie patologie ed essere quindi attinta anche da altri malati
+A carico del Team di sviluppo c'è anche l'onere del calcolo e del controllo del codice fiscale di ogni singolo paziente.
+Pertanto si raccomanda una struttura modulare del codice e la realizzazione di un'interfaccia utente intuitiva e
+pulita. È consentito l'utilizzo di moduli esterni a patto che si abbia padronanza delle funzioni utilizzate.
