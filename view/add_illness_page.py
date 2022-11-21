@@ -22,7 +22,7 @@ class Add_Illness_Page(tk.Frame):
   __    
  / /___ 
 < <(___)
- \_\    """,command=lambda : controller.show_frame("User_Page"),bg="#D2D2D2")
+ \_\    """,command=lambda : self._clean(),bg="#D2D2D2")
         self.back_button.place(x=0,y=10)
         
         #illness input
@@ -37,6 +37,10 @@ class Add_Illness_Page(tk.Frame):
 
         #add illness button
         self.add_illness_button=tk.Button(self,command=lambda : self.db.illness_control(self.illness_name.get(),self.db.id,self.illness_description.get()),text="Aggiungi patologia",fg="#000000",bg="#D2D2D2")
-        self.add_illness_button.place(x=250,y=350) #
-
+        self.add_illness_button.place(x=250,y=350) 
+        
+    def _clean(self):
+            self.illness_input.delete(0,tk.END)
+            self.illness_description_input.delete(0,tk.END)
+            self.controller.show_frame("User_Page")
         
