@@ -16,7 +16,7 @@ class Delete_Account_Page(tk.Frame):
   __    
  / /___ 
 < <(___)
- \_\   """,command=lambda : controller.show_frame("User_Page"),bg="#D2D2D2")
+ \_\   """,command=lambda : self._clean(),bg="#D2D2D2")
         self.back_button.place(x=0,y=10)
 
         #page title
@@ -32,3 +32,7 @@ class Delete_Account_Page(tk.Frame):
         #add confirm delete button
         self.confirm_delete_button=tk.Button(self,text="Elimina account",command=lambda:db.delete_user(db.id,self.password.get()),fg="#FF0000",bg="#D2D2D2")
         self.confirm_delete_button.place(x=250,y=300)
+
+    def _clean(self):
+        self.password_input.delete(0,tk.END)
+        self.controller.show_frame("User_Page")
