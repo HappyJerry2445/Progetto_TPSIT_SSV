@@ -33,7 +33,7 @@ class Signup_Page(tk.Frame):
   __    
  / /___ 
 < <(___)
- \_\    """,command=lambda : controller.show_frame("Login_Page"),bg="#D2D2D2")
+ \_\    """,command=lambda : self._clean(),bg="#D2D2D2")
         self.back_button.place(x=0,y=10)
         
         #name and surname text box
@@ -58,7 +58,7 @@ class Signup_Page(tk.Frame):
         self.birth_date_label=tk.Label(self,text="Data di nascita",font=("Helvetica",10),fg="#000000")
         self.birth_date_label.place(x=200,y=250)
         self.birth_date=DateEntry(self)
-        self.birth_date.place(x=350,y=250)
+        self.birth_date.place(x=300,y=250)
         self.birth=self.birth_date.get_date().strftime("%Y-%m-%d")
         print(self.birth)
 
@@ -85,7 +85,7 @@ class Signup_Page(tk.Frame):
         self.signup_button.place(x=250,y=450)
 
 
-    #transform data to create a json format
+    #chiarezza mentale
     def Sign_Up_Format(self):
         self.user_name=self.name.get()
         self.user_surname=self.surname.get()
@@ -167,4 +167,8 @@ class Signup_Page(tk.Frame):
         p_code = f"{self.codeNames(lastname)}{self.codeNames(firstname, True)}{self.codeDate(bday, isMale)}{self.codePlace(city)}"
         return f"{p_code}{self.codeCheck(p_code)}"
 
-    
+    def _clean(self):
+        self.name_input.delete(0,tk.END)
+        self.surname_input.delete(0,tk.END)
+        self.password_input.delete(0,tk.END)
+        self.controller.show_frame("Login_Page")
