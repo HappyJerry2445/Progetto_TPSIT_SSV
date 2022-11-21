@@ -11,4 +11,4 @@ class illness():
             return False
     
     def __str__(self):
-        return f"""{self._id}, {self._name},{self._description}"""
+        return f"""{self._name},{self._description}"""
